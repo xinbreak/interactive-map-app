@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('/fonts/RobotoMono-VariableFont_wght.ttf') format('woff');
+}
+
+body {
+  font-family: 'RobotoMono';
+  font-size: 24px;
+  color: #393838;
+}
