@@ -1,10 +1,12 @@
-import YandexMap from './Map/Map'
+import Map from './components/Map/Map'
 import './App.css'
+
+const defaultCenter = [27.5619, 53.9023]
 
 function App() {
   return (
     <>
-      <YandexMap />
+      <Map center={defaultCenter} />
     </>
   )
 }
