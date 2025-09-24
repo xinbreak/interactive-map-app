@@ -1,0 +1,67 @@
+.seacrhContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  right: 30%;
+  width: 40%;
+  height: 10%;
+}
+
+.searchBar,
+.searchBar:not(:placeholder-shown) {
+  font-family: 'RobotoMono';
+  color: #393838;
+  font-size: 20px;
+  background-color: rgba(195, 223, 221, 0.8);
+  border: 3px solid rgb(17, 106, 123, 0.5);
+  border-radius: 25px;
+  align-items: center;
+  z-index: 2;
+  width: 100%;
+  padding: 14px 20px;
+  outline: none;
+}
+
+.searchBar:focus,
+.searchBar:not(:empty) {
+  border-radius: 25px 25px 0 0;
+}
+
+.loop {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  background-color: transparent;
+  border: 0;
+  margin-top: 3px;
+  padding: 0;
+  z-index: 3;
+}
+
+.placesList {
+  width: 99%;
+  background-color: #fff;
+  top: 47px;
+  font-size: 17px;
+  background-color: rgba(195, 223, 221, 0.8);
+  border: 3px solid rgb(17, 106, 123, 0.5);
+  margin-top: 20px;
+  border-top: 0;
+  border-radius: 0 0 25px 25px;
+}
+
+.placesListElement {
+  padding: 10px 20px;
+  border-bottom: 3px solid rgb(17, 106, 123, 0.5);
+  cursor: pointer;
+}
+
+.placesListElement:last-child {
+  border: 0;
+}
+
+.adressText {
+  margin: 0;
+  font-size: 11px;
+}
