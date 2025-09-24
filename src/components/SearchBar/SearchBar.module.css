@@ -1,15 +1,17 @@
 .seacrhContainer {
   position: absolute;
-  display: flex;
-  align-items: center;
   z-index: 2;
   right: 30%;
   width: 40%;
-  height: 10%;
+  top: 12px;
 }
 
-.searchBar,
-.searchBar:not(:placeholder-shown) {
+.searhcBarContainer {
+  display: flex;
+  align-items: center;
+}
+
+.searchBar {
   font-family: 'RobotoMono';
   color: #393838;
   font-size: 20px;
@@ -24,34 +26,36 @@
 }
 
 .searchBar:focus,
-.searchBar:not(:empty) {
+.searchBar.active {
   border-radius: 25px 25px 0 0;
 }
 
 .loop {
+  text-align: center;
   cursor: pointer;
   position: absolute;
   right: 10px;
-  background-color: transparent;
+  background-color: rgba(17, 106, 123, 0.5);
   border: 0;
-  margin-top: 3px;
-  padding: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding-top: 5px;
   z-index: 3;
 }
 
 .placesList {
   width: 99%;
   background-color: #fff;
-  top: 47px;
   font-size: 17px;
   background-color: rgba(195, 223, 221, 0.8);
   border: 3px solid rgb(17, 106, 123, 0.5);
-  margin-top: 20px;
   border-top: 0;
   border-radius: 0 0 25px 25px;
 }
 
 .placesListElement {
+  display: flex;
   padding: 10px 20px;
   border-bottom: 3px solid rgb(17, 106, 123, 0.5);
   cursor: pointer;
@@ -64,4 +68,13 @@
 .adressText {
   margin: 0;
   font-size: 11px;
+}
+
+.categorieIcon {
+  color: #393838;
+  transform: scale(1.5);
+}
+
+.name {
+  margin-left: 10px;
 }

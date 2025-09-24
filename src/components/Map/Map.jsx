@@ -52,17 +52,16 @@ export default function Map({ deafualtCenter }) {
   return (
     <>
       <SeacrhBar />
+      <ControlZoomButtons
+        incremnetZoom={incremnetZoom}
+        decremnetZoom={decremnetZoom}
+      />
+      <ZoomSidebar zoom={zoom} />
       <div
         id="map-container"
         ref={mapContainerRef}
         style={{ width: '100%', height: '100%' }}
-      >
-        <ControlZoomButtons
-          incremnetZoom={incremnetZoom}
-          decremnetZoom={decremnetZoom}
-        />
-        <ZoomSidebar zoom={zoom} />
-      </div>
+      ></div>
     </>
   )
 }
