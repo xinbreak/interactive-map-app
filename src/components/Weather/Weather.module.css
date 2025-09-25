@@ -1,0 +1,36 @@
+.weatherWidget {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  padding: 5px 8px;
+  background-color: var(--bgr-clr);
+  border: 3px solid var(--brd-clr);
+  border-radius: 20px;
+  top: 12px;
+  right: 15px;
+}
+
+.temperatureAndCity {
+  margin-left: 5px;
+}
+
+.deg,
+.location {
+  margin: 0;
+}
+
+.deg {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.location {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.degIcon {
+  color: #393838;
+  transform: scale(1.1);
+  margin-bottom: 10px;
+}

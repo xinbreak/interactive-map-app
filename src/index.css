@@ -3,6 +3,16 @@
   src: url('/fonts/RobotoMono-VariableFont_wght.ttf') format('woff');
 }
 
+@font-face {
+  font-family: 'BleekerCyrillic';
+  src: url('/fonts/BleekerCyrillic.ttf') format('woff');
+}
+
+:root {
+  --bgr-clr: rgb(255, 255, 255, 0.9);
+  --brd-clr: rgb(12, 21, 28, 0.8);
+}
+
 body {
   font-family: 'RobotoMono';
   font-size: 24px;

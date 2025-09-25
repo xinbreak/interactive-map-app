@@ -1,6 +1,6 @@
 .zoomSidebarContainer {
-  background-color: rgba(195, 223, 221, 0.8);
-  border: 3px solid rgb(17, 106, 123, 0.5);
+  background-color: var(--bgr-clr);
+  border: 3px solid var(--brd-clr);
   border-radius: 20px;
   align-items: center;
   position: absolute;

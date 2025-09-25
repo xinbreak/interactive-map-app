@@ -11,23 +11,30 @@
   align-items: center;
 }
 
-.searchBar {
+.searchBar,
+.searchBar:focus {
   font-family: 'RobotoMono';
   color: #393838;
   font-size: 20px;
-  background-color: rgba(195, 223, 221, 0.8);
-  border: 3px solid rgb(17, 106, 123, 0.5);
-  border-radius: 25px;
+  background-color: var(--bgr-clr);
+  border: 3px solid var(--brd-clr);
+  border-radius: 20px;
   align-items: center;
   z-index: 2;
   width: 100%;
-  padding: 14px 20px;
+  padding: 15px 20px;
   outline: none;
+}
+
+.searchBar.active {
+  font-family: 'BleekerCyrillic';
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .searchBar:focus,
 .searchBar.active {
-  border-radius: 25px 25px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 
 .loop {
@@ -35,7 +42,7 @@
   cursor: pointer;
   position: absolute;
   right: 10px;
-  background-color: rgba(17, 106, 123, 0.5);
+  background-color: var(--brd-clr);
   border: 0;
   border-radius: 50%;
   width: 40px;
@@ -48,17 +55,24 @@
   width: 99%;
   background-color: #fff;
   font-size: 17px;
-  background-color: rgba(195, 223, 221, 0.8);
-  border: 3px solid rgb(17, 106, 123, 0.5);
+  background-color: var(--bgr-clr);
+  border: 3px solid var(--brd-clr);
   border-top: 0;
-  border-radius: 0 0 25px 25px;
+  border-radius: 0 0 20px 20px;
 }
 
 .placesListElement {
   display: flex;
   padding: 10px 20px;
-  border-bottom: 3px solid rgb(17, 106, 123, 0.5);
+
+  border-bottom: 3px solid var(--brd-clr);
   cursor: pointer;
+}
+
+.placesListElementMain {
+  font-family: 'BleekerCyrillic';
+  margin: 0;
+  font-size: 20px;
 }
 
 .placesListElement:last-child {
@@ -72,9 +86,9 @@
 
 .categorieIcon {
   color: #393838;
-  transform: scale(1.5);
+  transform: scale(1.75);
 }
 
 .name {
-  margin-left: 10px;
+  margin-left: 15px;
 }
