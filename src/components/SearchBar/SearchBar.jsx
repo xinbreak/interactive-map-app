@@ -29,13 +29,10 @@ export default function SearchBar({ onPlaceSelect }) {
   }
 
   const handlePlaceClick = (place) => {
-    setQuery(place.properties.name)
+    setQuery(place.title)
     setPlaces([])
     setPlaceVisibility(false)
-
-    if (onPlaceSelect) {
-      onPlaceSelect(place.geometry.coordinates)
-    }
+    onPlaceSelect([place.longitude, place.latitude], place)
   }
 
   return (
@@ -59,30 +56,26 @@ export default function SearchBar({ onPlaceSelect }) {
         {placeVisibility && places.length > 0 && (
           <ul className={styles.placesList}>
             {places.map((place) => {
-              const matchedCategory =
-                place.properties.CompanyMetaData?.Categories?.find(
-                  (cat) => categoryIcons[cat.class]
-                )
+              const matchedIcon = categoryIcons[place.category]
 
-              if (!matchedCategory) return null
+              if (!matchedIcon || !place.address?.includes('Минск')) return null // нет иконки → не выводим элемент
 
               return (
                 <li
                   className={styles.placesListElement}
-                  key={place.properties.uri}
+                  key={place.position}
                   onClick={() => handlePlaceClick(place)}
                 >
                   <img
                     className={styles.categorieIcon}
-                    src={categoryIcons[matchedCategory.class]}
+                    src={matchedIcon}
+                    alt={place.category || 'Место'}
                   />
                   <div className={styles.name}>
                     <h1 className={styles.placesListElementMain}>
-                      {place.properties.name}
+                      {place.title}
                     </h1>
-                    <p className={styles.adressText}>
-                      {place.properties.description}
-                    </p>
+                    <p className={styles.adressText}>{place.address}</p>
                   </div>
                 </li>
               )

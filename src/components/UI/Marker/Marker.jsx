@@ -30,7 +30,7 @@ const Marker = ({ map, coordinates }) => {
 
   return createPortal(
     <div>
-      <img className={styles.selectedMarker} src="/iconsPOI/default.svg" />
+      <img className={styles.selectedMarker} src="/icons/default.svg" />
     </div>,
     contentRef.current
   )

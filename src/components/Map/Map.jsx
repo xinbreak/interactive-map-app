@@ -5,23 +5,25 @@ import ControlZoomButtons from '../UI/ControlZoomButtons/ControlZoomButtons'
 import SeacrhBar from '../SearchBar/SearchBar'
 import Marker from '../UI/Marker/Marker'
 import Weather from '../Weather/Weather'
+import Info from '../Info/Info'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_API_KEY
 
-export default function Map({ deafualtCenter }) {
+export default function Map({ deafaultCenter }) {
   const [selectedCoords, setSelectedCoords] = useState([])
+  const [place, setPlace] = useState({})
 
-  const handlePlaceSelect = (coords) => {
+  const handlePlaceSelect = (coords, selectedPlace) => {
     setSelectedCoords(coords)
-    console.log('Выбранные координаты:', coords)
+    setPlace(selectedPlace)
   }
 
   const mapRef = useRef()
   const mapContainerRef = useRef()
 
   const [zoom, setZoom] = useState(11)
-  const [center, setCenter] = useState(deafualtCenter)
+  const [center, setCenter] = useState(deafaultCenter)
 
   const incremnetZoom = () => {
     mapRef.current.flyTo({
@@ -70,6 +72,7 @@ export default function Map({ deafualtCenter }) {
 
   return (
     <>
+      <Info place={place} />
       <SeacrhBar onPlaceSelect={handlePlaceSelect} />
       <ControlZoomButtons
         incremnetZoom={incremnetZoom}
@@ -82,7 +85,7 @@ export default function Map({ deafualtCenter }) {
         style={{ width: '100%', height: '100%' }}
       ></div>
       <Marker map={mapRef.current} coordinates={selectedCoords} />
-      <Weather coords={deafualtCenter} />
+      <Weather coords={deafaultCenter} />
     </>
   )
 }

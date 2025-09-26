@@ -1,13 +1,19 @@
 import axios from 'axios'
 
-const API_KEY = import.meta.env.VITE_YANDEX_API_KEY
+const API_KEY = import.meta.env.VITE_SERPER_API_KEY
 
 export default async function getPlaces(query) {
   try {
-    const response = await axios.get(
-      `https://search-maps.yandex.ru/v1/?text=${query}&type=biz&results=5&lang=ru_RU&bbox=27.69,53.83~27.40,53.97&apikey=${API_KEY}`
-    )
-    return response.data.features
+    let config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: `https://google.serper.dev/places?q=${query}&location=Minsk&gl=by&num=5&hl=ru&apiKey=${API_KEY}`,
+      headers: {},
+    }
+    const response = await axios.request(config)
+    console.log(JSON.stringify(response.data))
+
+    return response.data.places
   } catch (error) {
     console.error('There was error fetching places: ', error)
   }

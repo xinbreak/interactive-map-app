@@ -1,9 +1,10 @@
 export const categoryIcons = {
-  'fast food': '/iconsPOI/fastFood.svg',
-  'restaurants': '/iconsPOI/restaurant.svg',
-  'cafe': '/iconsPOI/cafe.svg',
-  'bars': '/iconsPOI/bar.svg',
-  'confectionary': '/iconsPOI/confectionary.svg',
+  'Бургерная': '/iconsPOI/fastFood.svg',
+  'Фастфуд': '/iconsPOI/fastFood.svg',
+  'Ресторан': '/iconsPOI/restaurant.svg',
+  'Кафе': '/iconsPOI/cafe.svg',
+  'Бар': '/iconsPOI/bar.svg',
+  'Пекарня': '/iconsPOI/confectionary.svg',
 
   // ... можно расширять
 }
